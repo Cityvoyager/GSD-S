@@ -75,93 +75,60 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 // Service Details Accordion Functionality
-document.addEventListener('DOMContentLoaded', function() {
-  const serviceCards = document.querySelectorAll('.service-card');
-  const detailsContainer = document.querySelector('.service-details-container');
+document.addEventListener('DOMContentLoaded', function () {
   const allDetails = document.querySelectorAll('.service-details');
 
-  // Open service details when "Learn more" is clicked
-  serviceCards.forEach(card => {
+  // Hide all panels on load (belt-and-suspenders)
+  allDetails.forEach(function (d) { d.style.display = 'none'; });
+
+  // Learn more buttons
+  document.querySelectorAll('.service-card').forEach(function (card) {
     const button = card.querySelector('.service-card__button');
     const serviceId = card.getAttribute('data-service');
+    if (!button || !serviceId) return;
 
-    button.addEventListener('click', function(e) {
+    button.addEventListener('click', function (e) {
       e.preventDefault();
-      openServiceDetails(serviceId);
-    });
-  });
+      const target = document.querySelector('.service-details[data-service="' + serviceId + '"]');
+      if (!target) return;
 
-  // Close button functionality
-  allDetails.forEach(detail => {
-    const closeButton = detail.querySelector('.service-details__close');
-    closeButton.addEventListener('click', function(e) {
-      e.preventDefault();
-      closeServiceDetails();
-    });
-  });
+      const isOpen = target.style.display === 'block';
 
-  // Function to open service details
-  function openServiceDetails(serviceId) {
-    // Close any currently open details
-    closeServiceDetails();
+      // Close all
+      allDetails.forEach(function (d) {
+        d.style.display = 'none';
+        d.classList.remove('active');
+      });
 
-    // Open the requested service details
-    const detailsElement = document.querySelector(
-      `.service-details[data-service="${serviceId}"]`
-    );
-
-    if (detailsElement) {
-      detailsElement.classList.add('active');
-      detailsContainer.setAttribute('aria-hidden', 'false');
-
-      // Smooth scroll to details
-      setTimeout(() => {
-        detailsElement.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }, 100);
-
-      // Update button state
-      const button = document.querySelector(
-        `.service-card[data-service="${serviceId}"] .service-card__button`
-      );
-      if (button) {
-        button.setAttribute('aria-expanded', 'true');
+      // Open this one if it wasn't already open
+      if (!isOpen) {
+        target.style.display = 'block';
+        target.classList.add('active');
+        setTimeout(function () {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 50);
       }
-    }
-  }
+    });
+  });
 
-  // Function to close service details
-  function closeServiceDetails() {
-    allDetails.forEach(detail => {
+  // Close buttons
+  allDetails.forEach(function (detail) {
+    const closeBtn = detail.querySelector('.service-details__close');
+    if (!closeBtn) return;
+    closeBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      detail.style.display = 'none';
       detail.classList.remove('active');
     });
-
-    detailsContainer.setAttribute('aria-hidden', 'true');
-
-    // Reset all button states
-    serviceCards.forEach(card => {
-      const button = card.querySelector('.service-card__button');
-      button.setAttribute('aria-expanded', 'false');
-    });
-  }
-
-  // Close details when pressing Escape key
-  document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') {
-      closeServiceDetails();
-    }
   });
 
-  // Optional: Close details when clicking outside
-  document.addEventListener('click', function(event) {
-    const isClickInsideDetails = event.target.closest('.service-details');
-    const isClickInsideCard = event.target.closest('.service-card__button');
-
-    if (!isClickInsideDetails && !isClickInsideCard) {
-      // Optionally close - comment out if you prefer keeping it open
-      // closeServiceDetails();
+  // Escape key
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      allDetails.forEach(function (d) {
+        d.style.display = 'none';
+        d.classList.remove('active');
+      });
     }
   });
 });
