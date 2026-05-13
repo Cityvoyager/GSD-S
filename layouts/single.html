@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ .Title }} | GSD-S</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Nav (same as homepage) -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo">
+        <span class="nav__logo-mark">GSD-S</span>
+        <span class="nav__logo-sub">Sustainable Development</span>
+      </a>
+      <div class="nav__links" id="navLinks">
+        <a class="nav__link" href="/#services">Services</a>
+        <a class="nav__link" href="/about/">About</a>
+        <a class="nav__link" href="/#contact">Contact</a>
+        <a class="nav__cta btn" href="/#contact">Get in touch</a>
+      </div>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="svc-page">
+
+    <!-- Breadcrumb + back -->
+    <div class="svc-page__nav">
+      <div class="svc-page__nav-inner">
+        <a href="/#services" class="svc-page__back">← All Services</a>
+        <nav class="svc-page__siblings" aria-label="Other services">
+          {{ range .Site.RegularPages }}
+            {{ if eq .Section "services" }}
+              <a href="{{ .RelPermalink }}"
+                 class="svc-page__sib{{ if eq .RelPermalink $.RelPermalink }} svc-page__sib--active{{ end }}">
+                {{ .Params.short_title | default .Title }}
+              </a>
+            {{ end }}
+          {{ end }}
+        </nav>
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <header class="svc-page__hero">
+      <div class="svc-page__hero-inner">
+        <span class="section-label">{{ .Params.number }} — Our Services</span>
+        <h1 class="svc-page__title">{{ .Title }}</h1>
+        <p class="svc-page__lead">{{ .Params.lead }}</p>
+      </div>
+    </header>
+
+    <!-- Content -->
+    <div class="svc-page__content">
+      <div class="svc-page__content-inner">
+        {{ .Content }}
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="svc-page__cta">
+      <div class="svc-page__cta-inner">
+        <p>Interested in this service?</p>
+        <a href="/#contact" class="btn btn--primary">Start a conversation →</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer (same as homepage) -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div>
+        <span class="footer__logo">GSD-S</span>
+        <span class="footer__tagline">Global Sustainable Development-Solutions</span>
+      </div>
+      <nav class="footer__nav">
+        <a href="/#services">Services</a>
+        <a href="/about/">About</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+      <div class="footer__contact">
+        <a href="mailto:contact@gsd-s.com">contact@gsd-s.com</a>
+        <a href="https://www.linkedin.com/company/gsd-s" target="_blank" class="footer__linkedin">LinkedIn ↗</a>
+      </div>
+    </div>
+    <div class="footer__base">
+      <p>© {{ now.Year }} GSD-S. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
