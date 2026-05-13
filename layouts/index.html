@@ -1,0 +1,148 @@
+{{ define "main" }}
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__bg-grid" aria-hidden="true"></div>
+  <div class="hero__inner">
+    <div class="hero__label">Environmental &amp; Social Compliance</div>
+    <h1 class="hero__title">
+      Sustainable answers<br>
+      <em>for complex projects</em>
+    </h1>
+    <p class="hero__desc">
+      GSD-S helps public and private organisations achieve the objectives of their
+      international development projects — ensuring environmental and social compliance
+      from inception to completion.
+    </p>
+    <div class="hero__actions">
+      <a href="#services" class="btn btn--primary">Our Services</a>
+      <a href="#contact" class="btn btn--ghost">Start a conversation</a>
+    </div>
+    <div class="hero__regions">
+      <span class="hero__region-label">Active in</span>
+      <span class="hero__region">Europe</span>
+      <span class="hero__region-dot">·</span>
+      <span class="hero__region">Asia</span>
+      <span class="hero__region-dot">·</span>
+      <span class="hero__region">Africa</span>
+    </div>
+  </div>
+  <div class="hero__scroll-line" aria-hidden="true"></div>
+</section>
+
+<!-- INTRO STATEMENT -->
+<section class="statement">
+  <div class="statement__inner">
+    <p class="statement__text">
+      We strive to contribute to the delivery of tangible impacts for international
+      development projects — ensuring compliance with environmental and social best
+      practices across the world.
+    </p>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services__inner">
+    <div class="services__header">
+      <span class="section-label">What we do</span>
+      <h2 class="services__title">Our Services</h2>
+    </div>
+    <div class="services__grid">
+      <article class="service-card">
+        <div class="service-card__num">01</div>
+        <h3 class="service-card__title">Environmental Impact Assessment</h3>
+        <p class="service-card__desc">We assess the environmental impact of your development project based on EU and international EIA standards, providing rigorous analysis that stands up to regulatory scrutiny.</p>
+        <a href="/services/eia/" class="service-card__link">Learn more →</a>
+      </article>
+      <article class="service-card">
+        <div class="service-card__num">02</div>
+        <h3 class="service-card__title">ESG Due Diligence</h3>
+        <p class="service-card__desc">Initial and ongoing environmental, social and governance due diligence for development projects, as well as compliance reviews throughout the project cycle.</p>
+        <a href="/services/esg/" class="service-card__link">Learn more →</a>
+      </article>
+      <article class="service-card">
+        <div class="service-card__num">03</div>
+        <h3 class="service-card__title">Tender &amp; Partnership Support</h3>
+        <p class="service-card__desc">We bid for public tenders alone or in partnership with consulting firms and NGOs — bringing technical depth and a network of experienced collaborators.</p>
+        <a href="/services/tenders/" class="service-card__link">Learn more →</a>
+      </article>
+      <article class="service-card">
+        <div class="service-card__num">04</div>
+        <h3 class="service-card__title">Project Management</h3>
+        <p class="service-card__desc">Beyond compliance, we engage in the overall management of projects from conception to completion — coordinating teams, managing deliverables, and ensuring impact.</p>
+        <a href="/services/pm/" class="service-card__link">Learn more →</a>
+      </article>
+      <article class="service-card">
+        <div class="service-card__num">05</div>
+        <h3 class="service-card__title">Carbon Credit Projects</h3>
+        <p class="service-card__desc">Specialised support for carbon credit project design, verification, and management — connecting environmental compliance with climate finance opportunities.</p>
+        <a href="/services/carbon/" class="service-card__link">Learn more →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section class="approach">
+  <div class="approach__inner">
+    <div class="approach__content">
+      <span class="section-label">Our approach</span>
+      <h2 class="approach__title">Wide experience.<br>Targeted expertise.</h2>
+      <p class="approach__text">GSD-S combines a wide variety of experience in green and sustainable solutions for public and private sector organisations, particularly in Europe, Asia and Africa. We combine systemic thinking with technical depth to design solutions with measurable impact.</p>
+      <a href="/about/" class="btn btn--outline">About GSD-S</a>
+    </div>
+    <div class="approach__pillars">
+      <div class="pillar">
+        <div class="pillar__icon">⬡</div>
+        <div class="pillar__label">EU &amp; International Standards</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar__icon">⬡</div>
+        <div class="pillar__label">Public &amp; Private Sector</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar__icon">⬡</div>
+        <div class="pillar__label">End-to-End Project Lifecycle</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar__icon">⬡</div>
+        <div class="pillar__label">Multi-Sector Experience</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact__inner">
+    <div class="contact__header">
+      <span class="section-label">Get in touch</span>
+      <h2 class="contact__title">Start a conversation</h2>
+      <p class="contact__sub">Whether you need compliance support, are preparing a tender, or want to explore a partnership — we'd like to hear from you.</p>
+    </div>
+    <form class="contact__form" name="contact" method="POST" data-netlify="true" action="/thank-you/">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required placeholder="Your name">
+        </div>
+        <div class="form-group">
+          <label for="org">Organisation</label>
+          <input type="text" id="org" name="organisation" placeholder="Organisation (optional)">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required placeholder="your@email.com">
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required placeholder="Tell us about your project or inquiry…"></textarea>
+      </div>
+      <button type="submit" class="btn btn--primary btn--submit">Send message →</button>
+    </form>
+  </div>
+</section>
+
+{{ end }}

@@ -1,0 +1,17 @@
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo" aria-label="GSD-S home">
+      <span class="nav__logo-mark">GSD-S</span>
+      <span class="nav__logo-sub">Sustainable Development</span>
+    </a>
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav__links" id="navLinks">
+      {{ range .Site.Menus.main }}
+      <li><a href="{{ .URL }}" class="nav__link">{{ .Name }}</a></li>
+      {{ end }}
+      <li><a href="/#contact" class="nav__cta">Get in touch</a></li>
+    </ul>
+  </div>
+</nav>

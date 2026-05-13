@@ -1,0 +1,24 @@
+baseURL = "https://www.gsd-s.com/"
+languageCode = "en-us"
+title = "GSD-S | Sustainable Development Experts"
+theme = ""
+
+[params]
+  description = "Global Sustainable Development-Solutions — Environmental & Social Compliance for International Development Projects"
+  tagline = "Environmental & Social Compliance for International Development"
+  email = "info@gsd-s.com"
+  linkedin = "https://www.linkedin.com/company/gsd-s"
+
+[menu]
+  [[menu.main]]
+    name = "Services"
+    url = "/services/"
+    weight = 1
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 2
+  [[menu.main]]
+    name = "Contact"
+    url = "/#contact"
+    weight = 3

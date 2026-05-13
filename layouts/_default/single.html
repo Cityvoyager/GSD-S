@@ -1,0 +1,16 @@
+{{ define "main" }}
+<div style="padding-top: var(--nav-h);">
+  <div class="page-hero">
+    <div class="page-hero__inner">
+      <span class="section-label">{{ .Section }}</span>
+      <h1 class="page-hero__title">{{ .Title }}</h1>
+      {{ with .Params.subtitle }}<p class="page-hero__sub">{{ . }}</p>{{ end }}
+    </div>
+  </div>
+  <article class="page-content">
+    <div class="page-content__inner">
+      {{ .Content }}
+    </div>
+  </article>
+</div>
+{{ end }}

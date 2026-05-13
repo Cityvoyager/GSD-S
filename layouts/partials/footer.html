@@ -1,0 +1,20 @@
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <span class="footer__logo">GSD-S</span>
+      <p class="footer__tagline">Global Sustainable Development-Solutions</p>
+    </div>
+    <nav class="footer__nav" aria-label="Footer navigation">
+      <a href="/services/">Services</a>
+      <a href="/about/">About</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <div class="footer__contact">
+      <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a>
+      {{ with .Site.Params.linkedin }}<a href="{{ . }}" target="_blank" rel="noopener" class="footer__linkedin">LinkedIn ↗</a>{{ end }}
+    </div>
+  </div>
+  <div class="footer__base">
+    <p>© {{ now.Year }} GSD-S. All rights reserved.</p>
+  </div>
+</footer>
