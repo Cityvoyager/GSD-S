@@ -1,74 +1,77 @@
 // Nav scroll state
 const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 40);
-}, { passive: true });
+if (nav) {
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+}
 
 // Mobile nav toggle
-const toggle = document.getElementById('navToggle');
-const links = document.getElementById('navLinks');
-if (toggle && links) {
-  toggle.addEventListener('click', () => {
-    const open = links.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', open);
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+if (navToggle && navLinks) {
+  navToggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', String(open));
   });
 }
 
 // Service detail panels
-const serviceToggles = document.querySelectorAll('.js-service-toggle');
-const serviceDetails = document.querySelectorAll('.service-detail');
-const serviceCards = document.querySelectorAll('.service-card');
+document.addEventListener('DOMContentLoaded', function () {
 
-function closeAll() {
-  serviceDetails.forEach(d => {
-    d.setAttribute('aria-hidden', 'true');
-  });
-  serviceCards.forEach(c => c.classList.remove('is-active'));
-}
+  function closeAll() {
+    document.querySelectorAll('.service-detail').forEach(function (d) {
+      d.style.display = 'none';
+    });
+    document.querySelectorAll('.service-card').forEach(function (c) {
+      c.classList.remove('is-active');
+    });
+  }
 
-serviceToggles.forEach(btn => {
-  btn.addEventListener('click', () => {
-    const target = btn.dataset.target;
-    const detail = document.getElementById('detail-' + target);
-    const card = btn.closest('.service-card');
-    const isOpen = detail.getAttribute('aria-hidden') === 'false';
+  // Learn more buttons
+  document.querySelectorAll('.js-service-toggle').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
 
-    closeAll();
+      var target = btn.getAttribute('data-target');
+      var detail = document.getElementById('detail-' + target);
+      var card = btn.closest('.service-card');
 
-    if (!isOpen) {
-      detail.setAttribute('aria-hidden', 'false');
-      card.classList.add('is-active');
-      // Scroll smoothly to the detail panel
-      setTimeout(() => {
-        detail.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 50);
-    }
-  });
-});
+      if (!detail) return;
 
-document.querySelectorAll('.js-service-close').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const detail = btn.closest('.service-detail');
-    const id = detail.id.replace('detail-', '');
-    const card = document.querySelector('[data-service="' + id + '"]');
-    detail.setAttribute('aria-hidden', 'true');
-    if (card) {
-      card.classList.remove('is-active');
-      card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
-  });
-});
+      var isOpen = detail.style.display === 'block';
 
-// Reveal on scroll
-const reveals = document.querySelectorAll('.reveal');
-if (reveals.length) {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), i * 80);
-        observer.unobserve(entry.target);
+      closeAll();
+
+      if (!isOpen) {
+        detail.style.display = 'block';
+        if (card) card.classList.add('is-active');
+        setTimeout(function () {
+          detail.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 50);
       }
     });
-  }, { threshold: 0.1 });
-  reveals.forEach(el => observer.observe(el));
-}
+  });
+
+  // Close buttons
+  document.querySelectorAll('.js-service-close').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      var detail = btn.closest('.service-detail');
+      if (!detail) return;
+
+      var id = detail.id.replace('detail-', '');
+      var card = document.querySelector('[data-service="' + id + '"]');
+
+      detail.style.display = 'none';
+      if (card) {
+        card.classList.remove('is-active');
+        card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    });
+  });
+
+});
