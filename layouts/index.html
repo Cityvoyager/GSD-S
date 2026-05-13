@@ -41,235 +41,343 @@
   </div>
 </section>
 
-<!-- SERVICES -->
-<section class="services" id="services">
-  <div class="services__inner">
+<!-- Services Section -->
+<section id="services" class="services">
+  <div class="services__container">
     <div class="services__header">
-      <span class="section-label">What we do</span>
+      <p class="services__label">What we do</p>
       <h2 class="services__title">Our Services</h2>
     </div>
+
+    <!-- Services Grid -->
     <div class="services__grid">
- 
+      <!-- Service Card 1 -->
       <article class="service-card" data-service="esia">
-        <div class="service-card__num">01</div>
-        <h3 class="service-card__title">Environmental &amp; Social Impact Assessment</h3>
-        <p class="service-card__desc">ESIAs in compliance with EU, EIB, and IFC standards — covering screening, scoping, and compliance reviews across energy, water, transport, and natural resource sectors.</p>
-        <button type="button" class="service-card__link js-service-toggle" data-target="esia">Learn more →</button>
+        <div class="service-card__header">
+          <span class="service-card__number">01</span>
+          <h3 class="service-card__title">Environmental & Social Impact Assessment</h3>
+        </div>
+        <p class="service-card__description">
+          ESIAs in compliance with EU, EIB, and IFC standards — covering screening, scoping, and compliance reviews across energy, water & sanitation, transport, and natural resource management.
+        </p>
+        <button class="service-card__button" type="button" aria-expanded="false">
+          Learn more →
+        </button>
       </article>
- 
+
+      <!-- Service Card 2 -->
       <article class="service-card" data-service="esg">
-        <div class="service-card__num">02</div>
-        <h3 class="service-card__title">ESG Due Diligence &amp; Compliance</h3>
-        <p class="service-card__desc">Project-cycle ESG compliance verification against EU, EIB, and international policies — drawing on hands-on experience with accountability mechanisms across Africa, Asia, and Europe.</p>
-        <button type="button" class="service-card__link js-service-toggle" data-target="esg">Learn more →</button>
+        <div class="service-card__header">
+          <span class="service-card__number">02</span>
+          <h3 class="service-card__title">ESG Due Diligence & Compliance</h3>
+        </div>
+        <p class="service-card__description">
+          Project-cycle ESG compliance verification against EU, EIB, and international policies — drawing on hands-on experience with accountability mechanisms across Africa, Asia, and Europe.
+        </p>
+        <button class="service-card__button" type="button" aria-expanded="false">
+          Learn more →
+        </button>
       </article>
- 
+
+      <!-- Service Card 3 -->
       <article class="service-card" data-service="mel">
-        <div class="service-card__num">03</div>
-        <h3 class="service-card__title">Monitoring, Evaluation &amp; Learning</h3>
-        <p class="service-card__desc">Results-based M&amp;E frameworks aligned with GBF, Paris Agreement, and SDG targets — including learning systems, indicator design, and reporting for GIZ, EU, and multilateral programmes.</p>
-        <button type="button" class="service-card__link js-service-toggle" data-target="mel">Learn more →</button>
+        <div class="service-card__header">
+          <span class="service-card__number">03</span>
+          <h3 class="service-card__title">Monitoring, Evaluation & Learning</h3>
+        </div>
+        <p class="service-card__description">
+          Results-based M&E frameworks aligned with GBF, Paris Agreement, and SDG targets — including learning systems, indicator design, and reporting for GIZ, EU, and multilateral programmes.
+        </p>
+        <button class="service-card__button" type="button" aria-expanded="false">
+          Learn more →
+        </button>
       </article>
- 
-      <article class="service-card" data-service="pm">
-        <div class="service-card__num">04</div>
-        <h3 class="service-card__title">Project &amp; Programme Management</h3>
-        <p class="service-card__desc">End-to-end management for EU, GIZ, KfW, and World Bank-funded programmes — from offer preparation and expert coordination to quality assurance and donor reporting across Africa and Asia.</p>
-        <button type="button" class="service-card__link js-service-toggle" data-target="pm">Learn more →</button>
+
+      <!-- Service Card 4 -->
+      <article class="service-card" data-service="ppm">
+        <div class="service-card__header">
+          <span class="service-card__number">04</span>
+          <h3 class="service-card__title">Project & Programme Management</h3>
+        </div>
+        <p class="service-card__description">
+          End-to-end management for EU, GIZ, KfW, World Bank, and UNDP-funded programmes — from offer preparation and expert coordination to quality assurance and donor reporting across climate, environment, biodiversity, and water projects.
+        </p>
+        <button class="service-card__button" type="button" aria-expanded="false">
+          Learn more →
+        </button>
       </article>
- 
-      <article class="service-card" data-service="knowledge">
-        <div class="service-card__num">05</div>
-        <h3 class="service-card__title">Knowledge Management &amp; Policy Support</h3>
-        <p class="service-card__desc">Policy briefs, learning frameworks, and knowledge products that translate complex programme results into actionable insights — supporting EU policy dialogue, aid coordination, and stakeholder engagement.</p>
-        <button type="button" class="service-card__link js-service-toggle" data-target="knowledge">Learn more →</button>
+
+      <!-- Service Card 5 -->
+      <article class="service-card" data-service="kmp">
+        <div class="service-card__header">
+          <span class="service-card__number">05</span>
+          <h3 class="service-card__title">Knowledge Management & Policy Support</h3>
+        </div>
+        <p class="service-card__description">
+          Policy briefs, learning frameworks, and knowledge products that translate complex programme results into actionable insights — supporting EU policy dialogue, aid coordination, and stakeholder engagement.
+        </p>
+        <button class="service-card__button" type="button" aria-expanded="false">
+          Learn more →
+        </button>
       </article>
- 
+
+      <!-- Service Card 6 -->
       <article class="service-card" data-service="ai">
-        <div class="service-card__num">06</div>
-        <h3 class="service-card__title">AI &amp; Data Processing</h3>
-        <p class="service-card__desc">Applied AI and data analytics for development programmes — from dashboard design and indicator tracking to AI-assisted reporting, data structuring, and decision-support tools for complex project environments.</p>
-        <button type="button" class="service-card__link js-service-toggle" data-target="ai">Learn more →</button>
+        <div class="service-card__header">
+          <span class="service-card__number">06</span>
+          <h3 class="service-card__title">AI & Data Processing</h3>
+        </div>
+        <p class="service-card__description">
+          Applied AI and data analytics for development programmes — from dashboard design and indicator tracking to data structuring, decision-support tools, and AI workflow integration for multilingual, multi-donor environments.
+        </p>
+        <button class="service-card__button" type="button" aria-expanded="false">
+          Learn more →
+        </button>
       </article>
- 
     </div>
- 
-    <!-- SERVICE DETAIL PANELS -->
- 
-    <div class="service-detail" id="detail-esia" aria-hidden="true">
-      <div class="service-detail__inner">
-        <button type="button" class="service-detail__close js-service-close" aria-label="Close">✕</button>
-        <h2 class="service-detail__title">Environmental &amp; Social Impact Assessment</h2>
-        <div class="service-detail__body">
-          <div class="service-detail__col">
-            <h4 class="service-detail__col-heading">What we deliver</h4>
-            <ul>
-              <li>ESIAs aligned with EU Directive, EIB Environmental and Social Standards, and IFC Performance Standards</li>
-              <li>Project screening and scoping across energy, water &amp; sanitation, transport, and natural resource management</li>
-              <li>Compliance reviews assessing adherence to national legislation and international agreements throughout the project cycle</li>
-              <li>Stakeholder consultation frameworks and public participation processes</li>
-              <li>Environmental and social management plans (ESMPs) and monitoring protocols</li>
-            </ul>
-          </div>
-          <div class="service-detail__col">
-            <h4 class="service-detail__col-heading">Project evidence</h4>
-            <ul>
-              <li><strong>EIB – Slovakia:</strong> Compliance review of EIA for a nuclear power plant modification (€60M loan) — assessed public participation and national EIA law compliance</li>
-              <li><strong>EIB – Germany:</strong> Compliance review of EIA for the Autobahn A49 federal highway project (€264M loan) — assessed procedural compliance and environmental monitoring</li>
-              <li><strong>EIB – Lebanon:</strong> ESIA compliance review for two wind energy projects (89 MW &amp; 67 MW, €120M loan)</li>
-              <li><strong>EU DG INTPA – Cameroon:</strong> Oversight of ESIAs for national parks and natural resource management projects under EDF and EU Trust Fund for Africa</li>
-              <li><strong>EIB:</strong> Certified in EIB Environmental and Social Principles and Standards for EIB-Financed Projects (2021–2022)</li>
-            </ul>
-          </div>
-        </div>
+  </div>
+
+  <!-- Expandable Details Container -->
+  <div class="service-details-container" aria-hidden="true">
+    <!-- ESIA Details -->
+    <div class="service-details" id="details-esia" data-service="esia">
+      <div class="service-details__header">
+        <button class="service-details__close" type="button" aria-label="Close details">
+          ✕
+        </button>
+        <h2 class="service-details__title">Environmental & Social Impact Assessment</h2>
+      </div>
+
+      <div class="service-details__content">
+        <h3>What we deliver</h3>
+        <ul>
+          <li>ESIAs aligned with EU Directive, EIB Environmental and Social Standards, and IFC Performance Standards</li>
+          <li>Project screening and scoping across energy, water & sanitation, transport, and natural resource management sectors</li>
+          <li>Compliance reviews assessing adherence to national legislation and international agreements throughout project lifecycle</li>
+          <li>Stakeholder consultation frameworks and public participation processes</li>
+          <li>Environmental and social management plans (ESMPs) and monitoring protocols</li>
+        </ul>
+
+        <h3>Project evidence</h3>
+        <ul>
+          <li>
+            <strong>EIB – Slovakia:</strong> Compliance review of EIA for a nuclear power plant modification (€60M loan) — assessed public participation and stakeholder consultation processes
+          </li>
+          <li>
+            <strong>EIB – Germany:</strong> Compliance review of EIA for the Autobahn A49 federal highway project (€264M loan) — assessed procedural and substantive EIA compliance
+          </li>
+          <li>
+            <strong>EIB – Lebanon:</strong> ESIA compliance review for two wind energy projects (89 MW & 67 MW, €120M loan)
+          </li>
+          <li>
+            <strong>EU DG INTPA – Cameroon:</strong> Oversight of ESIAs for national parks and natural resource management projects under EDF and EU Trust Fund for Africa
+          </li>
+          <li>
+            <strong>EIB:</strong> Certified in EIB Environmental and Social Principles and Standards for EIB-Financed Projects (2021–2022)
+          </li>
+        </ul>
       </div>
     </div>
- 
-    <div class="service-detail" id="detail-esg" aria-hidden="true">
-      <div class="service-detail__inner">
-        <button type="button" class="service-detail__close js-service-close" aria-label="Close">✕</button>
-        <h2 class="service-detail__title">ESG Due Diligence &amp; Compliance</h2>
-        <div class="service-detail__body">
-          <div class="service-detail__col">
-            <h4 class="service-detail__col-heading">What we deliver</h4>
-            <ul>
-              <li>Initial and ongoing ESG due diligence for development finance institutions and private sector clients</li>
-              <li>Compliance verification against EIB Standards, EU taxonomy, and IFC Performance Standards</li>
-              <li>Independent accountability and complaints mechanism support — analysis of alleged ESG violations</li>
-              <li>Data-driven compliance reports synthesising ESIAs, monitoring data, and stakeholder inputs</li>
-              <li>Gender, displacement, and access-to-information compliance assessments</li>
-            </ul>
-          </div>
-          <div class="service-detail__col">
-            <h4 class="service-detail__col-heading">Project evidence</h4>
-            <ul>
-              <li><strong>EIB – Kenya:</strong> Compliance review of gender and displacement impacts of the Akiira geothermal power plant</li>
-              <li><strong>EIB – Bulgaria:</strong> ESG compliance review of a municipal waste incineration plant (€67M loan)</li>
-              <li><strong>EIB – India:</strong> Social compliance review of the Pune Metro Rail project (€600M loan) — evictions and gender aspects</li>
-              <li><strong>EIB – Lebanon &amp; Slovakia:</strong> Governance and environmental compliance reviews across renewable energy and nuclear sectors</li>
-              <li><strong>EU DG INTPA – Cameroon:</strong> Gender compliance review of an EU-funded project following a sexual abuse allegation</li>
-            </ul>
-          </div>
-        </div>
+
+    <!-- ESG Details -->
+    <div class="service-details" id="details-esg" data-service="esg">
+      <div class="service-details__header">
+        <button class="service-details__close" type="button" aria-label="Close details">
+          ✕
+        </button>
+        <h2 class="service-details__title">ESG Due Diligence & Compliance</h2>
+      </div>
+
+      <div class="service-details__content">
+        <h3>What we deliver</h3>
+        <ul>
+          <li>Initial and ongoing ESG due diligence for development finance institutions and private sector clients</li>
+          <li>Compliance verification against EIB Standards, EU taxonomy, and IFC Performance Standards</li>
+          <li>Independent accountability and complaints mechanism support — analysis of alleged ESG violations</li>
+          <li>Data-driven compliance reports synthesising ESIAs, monitoring data, and stakeholder inputs</li>
+          <li>Gender, displacement, and access-to-information compliance assessments</li>
+        </ul>
+
+        <h3>Project evidence</h3>
+        <ul>
+          <li>
+            <strong>EIB – Kenya:</strong> Compliance review of gender and displacement impacts of the Akiira geothermal power plant
+          </li>
+          <li>
+            <strong>EIB – Bulgaria:</strong> ESG compliance review of a municipal waste incineration plant (€67M loan)
+          </li>
+          <li>
+            <strong>EIB – India:</strong> Social compliance review of the Pune Metro Rail project (€600M loan) — evictions and gender aspects
+          </li>
+          <li>
+            <strong>EIB – Lebanon & Slovakia:</strong> Governance and environmental compliance reviews across renewable energy and nuclear sectors
+          </li>
+          <li>
+            <strong>EU DG INTPA – Cameroon:</strong> Gender compliance review of an EU-funded project following a sexual abuse allegation
+          </li>
+        </ul>
       </div>
     </div>
- 
-    <div class="service-detail" id="detail-mel" aria-hidden="true">
-      <div class="service-detail__inner">
-        <button type="button" class="service-detail__close js-service-close" aria-label="Close">✕</button>
-        <h2 class="service-detail__title">Monitoring, Evaluation &amp; Learning</h2>
-        <div class="service-detail__body">
-          <div class="service-detail__col">
-            <h4 class="service-detail__col-heading">What we deliver</h4>
-            <ul>
-              <li>Results-based M&amp;E frameworks aligned with GBF, Paris Agreement, SDG 6, and donor performance requirements</li>
-              <li>Indicator design, data collection tools, and reporting systems for GIZ, EU, KfW, and multilateral programmes</li>
-              <li>Programme evaluations using documentary review, stakeholder interviews, and technical &amp; financial data analysis</li>
-              <li>Learning systems that capture lessons and feed into global knowledge platforms and policy dialogue</li>
-              <li>Adaptive management approaches for complex, multi-country programme environments</li>
-            </ul>
-          </div>
-          <div class="service-detail__col">
-            <h4 class="service-detail__col-heading">Project evidence</h4>
-            <ul>
-              <li><strong>GIZ BioClime – Team Leader (2024–present):</strong> Designed M&amp;E methodological framework for the biodiversity–climate–water nexus across Thailand, Indonesia, Mexico, Brazil, Costa Rica, and Mongolia</li>
-              <li><strong>GIZ SecBlue – Team Leader (2025–present):</strong> Established monitoring and learning approach for NbS on water security; results-based reporting aligned with SDG 6 and GBF in Ethiopia, Lesotho, and Thailand</li>
-              <li><strong>GIZ COMIFAC (2021–2022):</strong> Evaluated the "One Health" programme component (€5.6M) in Central Africa — fact-finding missions in Cameroon and full evaluation report</li>
-              <li><strong>EU DG INTPA – Cameroon (2019–2021):</strong> Annual implementation and completion reports for EU-funded environmental projects; aid effectiveness dashboards across all EU projects in Cameroon</li>
-              <li><strong>Dorsch Impact (2023–present):</strong> Designed internal M&amp;E framework and knowledge management system for the Climate, Environment &amp; Biodiversity Team</li>
-            </ul>
-          </div>
-        </div>
+
+    <!-- M&E Details -->
+    <div class="service-details" id="details-mel" data-service="mel">
+      <div class="service-details__header">
+        <button class="service-details__close" type="button" aria-label="Close details">
+          ✕
+        </button>
+        <h2 class="service-details__title">Monitoring, Evaluation & Learning</h2>
+      </div>
+
+      <div class="service-details__content">
+        <h3>What we deliver</h3>
+        <ul>
+          <li>Results-based M&E frameworks aligned with GBF, Paris Agreement, SDG 6, and donor performance requirements</li>
+          <li>Indicator design, data collection tools, and reporting systems for GIZ, EU, KfW, and multilateral programmes</li>
+          <li>Programme evaluations using documentary review, stakeholder interviews, and technical & financial data analysis</li>
+          <li>Learning systems that capture lessons and feed into global knowledge platforms and policy dialogue</li>
+          <li>Adaptive management approaches for complex, multi-country programme environments</li>
+        </ul>
+
+        <h3>Project evidence</h3>
+        <ul>
+          <li>
+            <strong>GIZ BioClime – Team Leader (2024–present):</strong> Designed M&E methodological framework for the biodiversity–climate–water nexus across Thailand, Indonesia, and Uganda
+          </li>
+          <li>
+            <strong>GIZ SecBlue – Team Leader (2025–present):</strong> Established monitoring and learning approach for NbS on water security; results-based reporting aligned with GCF
+          </li>
+          <li>
+            <strong>GIZ COMIFAC (2021–2022):</strong> Evaluated the "One Health" programme component (€5.6M) in Central Africa
+          </li>
+          <li>
+            <strong>EU DG INTPA – Cameroon (2019–2021):</strong> Annual implementation and completion reports for EU-funded environmental projects; aid effectiveness assessments
+          </li>
+          <li>
+            <strong>Dorsch Impact (2023–present):</strong> Designed internal M&E framework and knowledge management system for the Climate, Environment & Biodiversity portfolio
+          </li>
+        </ul>
       </div>
     </div>
- 
-    <div class="service-detail" id="detail-pm" aria-hidden="true">
-      <div class="service-detail__inner">
-        <button type="button" class="service-detail__close js-service-close" aria-label="Close">✕</button>
-        <h2 class="service-detail__title">Project &amp; Programme Management</h2>
-        <div class="service-detail__body">
-          <div class="service-detail__col">
-            <h4 class="service-detail__col-heading">What we deliver</h4>
-            <ul>
-              <li>Team leadership and expert coordination for GIZ, EU, KfW, World Bank, and UNDP-funded programmes</li>
-              <li>Technical and financial offer preparation for publicly tendered consulting services</li>
-              <li>Work planning, expert day allocation, quality assurance, and risk management</li>
-              <li>Backstopping and contract management for climate, environment, biodiversity, and water projects</li>
-              <li>Liaison with commissioning authorities, implementing partners, and EU Delegations</li>
-            </ul>
-          </div>
-          <div class="service-detail__col">
-            <h4 class="service-detail__col-heading">Project evidence</h4>
-            <ul>
-              <li><strong>GIZ BioClime – Team Leader (2024–present):</strong> Directed expert team across 6 countries; coordinated with GIZ ActBlue on biodiversity–climate–water programme coherence</li>
-              <li><strong>GIZ SecBlue – Team Leader (2025–present):</strong> Led inception phase; directed expert team; managed delivery of handbook, policy brief, and webinar series</li>
-              <li><strong>Dorsch Impact (2023–present):</strong> Drafted and coordinated offers for EU (DG INTPA, DG NEAR, DG ENV), GIZ, KfW, World Bank, and UN; contributed to EU Framework Contract SEA 2023 Lot 2</li>
-              <li><strong>EU DG INTPA – Cameroon (2019–2021):</strong> Contract management across food security, ecosystems, smart agriculture, and gender projects under EDF and EU Trust Fund for Africa</li>
-              <li><strong>GSD-S (2022–present):</strong> Overall contracting, service delivery, quality control, and strategic management</li>
-            </ul>
-          </div>
-        </div>
+
+    <!-- PPM Details -->
+    <div class="service-details" id="details-ppm" data-service="ppm">
+      <div class="service-details__header">
+        <button class="service-details__close" type="button" aria-label="Close details">
+          ✕
+        </button>
+        <h2 class="service-details__title">Project & Programme Management</h2>
+      </div>
+
+      <div class="service-details__content">
+        <h3>What we deliver</h3>
+        <ul>
+          <li>Team leadership and expert coordination for GIZ, EU, KfW, World Bank, and UNDP-funded programmes</li>
+          <li>Technical and financial offer preparation for publicly tendered consulting services</li>
+          <li>Work planning, expert day allocation, quality assurance, and risk management</li>
+          <li>Backstopping and contract management for climate, environment, biodiversity, and water projects</li>
+          <li>Liaison with commissioning authorities, implementing partners, and EU Delegations</li>
+        </ul>
+
+        <h3>Project evidence</h3>
+        <ul>
+          <li>
+            <strong>GIZ BioClime – Team Leader (2024–present):</strong> Directed expert team across 6 countries; coordinated with GIZ ActBlue on biodiversity–climate–water nexus
+          </li>
+          <li>
+            <strong>GIZ SecBlue – Team Leader (2025–present):</strong> Led inception phase; directed expert team; managed delivery of handbook, policy brief, and webinar series
+          </li>
+          <li>
+            <strong>Dorsch Impact (2023–present):</strong> Drafted and coordinated offers for EU (DG INTPA, DG NEAR, DG ENV), GIZ, KfW, World Bank, and UN; contract management
+          </li>
+          <li>
+            <strong>EU DG INTPA – Cameroon (2019–2021):</strong> Contract management across food security, ecosystems, smart agriculture, and gender projects under EDF
+          </li>
+          <li>
+            <strong>GSD-S (2022–present):</strong> Overall contracting, service delivery, quality control, and strategic management
+          </li>
+        </ul>
       </div>
     </div>
- 
-    <div class="service-detail" id="detail-knowledge" aria-hidden="true">
-      <div class="service-detail__inner">
-        <button type="button" class="service-detail__close js-service-close" aria-label="Close">✕</button>
-        <h2 class="service-detail__title">Knowledge Management &amp; Policy Support</h2>
-        <div class="service-detail__body">
-          <div class="service-detail__col">
-            <h4 class="service-detail__col-heading">What we deliver</h4>
-            <ul>
-              <li>Case studies, policy briefs, PANORAMA-type solutions, and learning formats for international dissemination</li>
-              <li>Capacity building for partner organisations to systematise and share learning experiences</li>
-              <li>EU policy monitoring, analysis, and stakeholder engagement strategies for legislative processes</li>
-              <li>Aid coordination frameworks and dashboards supporting multi-donor programme coherence</li>
-              <li>Webinars, podcasts, infographics, and practitioner guidance for virtual outreach</li>
-            </ul>
-          </div>
-          <div class="service-detail__col">
-            <h4 class="service-detail__col-heading">Project evidence</h4>
-            <ul>
-              <li><strong>GIZ BioClime (2024–present):</strong> Produced and disseminated PANORAMA-type learning products; delivered capacity-building for partner organisations across the biodiversity–climate nexus</li>
-              <li><strong>GIZ SecBlue (2025–present):</strong> Developed "Guidelines for Scaling up" handbook, policy brief, and infographics; designed webinar and podcast series for NbS knowledge sharing</li>
-              <li><strong>EU DG INTPA – Cameroon (2019–2021):</strong> Built EU aid coordination dashboard; authored policy report on clandestine gold mining with economic analysis and recommendations</li>
-              <li><strong>Austrian Presidency of the Council of the EU (2018–2019):</strong> Chaired Working Party of Environment sessions; led negotiation of Council Conclusions; briefed on EU water reuse, LIFE, and single-use plastics legislation</li>
-              <li><strong>European Commission DG ENV (2017):</strong> Contributed to EU Circular Economy Action Plan; produced case studies and best practices on circular economy initiatives</li>
-            </ul>
-          </div>
-        </div>
+
+    <!-- KMP Details -->
+    <div class="service-details" id="details-kmp" data-service="kmp">
+      <div class="service-details__header">
+        <button class="service-details__close" type="button" aria-label="Close details">
+          ✕
+        </button>
+        <h2 class="service-details__title">Knowledge Management & Policy Support</h2>
+      </div>
+
+      <div class="service-details__content">
+        <h3>What we deliver</h3>
+        <ul>
+          <li>Case studies, policy briefs, PANORAMA-type solutions, and learning formats for international dissemination</li>
+          <li>Capacity building for partner organisations to systematise and share learning experiences</li>
+          <li>EU policy monitoring, analysis, and stakeholder engagement strategies for legislative processes</li>
+          <li>Aid coordination frameworks and dashboards supporting multi-donor programme coherence</li>
+          <li>Webinars, podcasts, infographics, and practitioner guidance for virtual outreach</li>
+        </ul>
+
+        <h3>Project evidence</h3>
+        <ul>
+          <li>
+            <strong>GIZ BioClime (2024–present):</strong> Produced and disseminated PANORAMA-type learning products; delivered capacity-building for partner organisations
+          </li>
+          <li>
+            <strong>GIZ SecBlue (2025–present):</strong> Developed "Guidelines for Scaling up" handbook, policy brief, and infographics; designed webinar and learning series
+          </li>
+          <li>
+            <strong>EU DG INTPA – Cameroon (2019–2021):</strong> Built EU aid coordination dashboard; authored policy report on clandestine gold mining with economic impact analysis
+          </li>
+          <li>
+            <strong>Austrian Presidency of the Council of the EU (2018–2019):</strong> Chaired Working Party of Environment sessions; led negotiation of Council Conclusions
+          </li>
+          <li>
+            <strong>European Commission DG ENV (2017):</strong> Contributed to EU Circular Economy Action Plan; produced case studies and best practices on circular economy transition
+          </li>
+        </ul>
       </div>
     </div>
- 
-    <div class="service-detail" id="detail-ai" aria-hidden="true">
-      <div class="service-detail__inner">
-        <button type="button" class="service-detail__close js-service-close" aria-label="Close">✕</button>
-        <h2 class="service-detail__title">AI &amp; Data Processing</h2>
-        <div class="service-detail__body">
-          <div class="service-detail__col">
-            <h4 class="service-detail__col-heading">What we deliver</h4>
-            <ul>
-              <li>AI-assisted reporting, data structuring, and synthesis for complex, multi-source programme datasets</li>
-              <li>Dashboard design and indicator tracking systems for real-time programme monitoring</li>
-              <li>Database management and data analytics for accountability and transparency reporting</li>
-              <li>Decision-support tools and automated workflows for project management and M&amp;E processes</li>
-              <li>AI workflow integration for consulting teams across multilingual, multi-donor environments</li>
-            </ul>
-          </div>
-          <div class="service-detail__col">
-            <h4 class="service-detail__col-heading">Project evidence</h4>
-            <ul>
-              <li><strong>EU DG INTPA – Cameroon (2019–2021):</strong> Built data dashboards aggregating financial and technical data from all EU-funded projects to support aid coordination and EU Member State reporting</li>
-              <li><strong>EIB Accountability Mechanism (2021–2022):</strong> Structured large volumes of ESIA, monitoring, and contractual data into data-driven compliance reports across 6 countries</li>
-              <li><strong>Dorsch Impact (2023–present):</strong> Designed knowledge management system and data analytics tools to monitor acquisition efforts across EU and EU MS funding modalities</li>
-              <li><strong>GSD-S (2022–present):</strong> AI-assisted service delivery, performance monitoring, and engagement with Regen Network on blockchain-based carbon market and ecosystem service data</li>
-              <li><strong>GIZ BioClime &amp; SecBlue (2024–present):</strong> AI prompting applied to M&amp;E data aggregation, synthesis of NbS learning experiences, and multi-lingual stakeholder reporting</li>
-            </ul>
-          </div>
-        </div>
+
+    <!-- AI Details -->
+    <div class="service-details" id="details-ai" data-service="ai">
+      <div class="service-details__header">
+        <button class="service-details__close" type="button" aria-label="Close details">
+          ✕
+        </button>
+        <h2 class="service-details__title">AI & Data Processing</h2>
+      </div>
+
+      <div class="service-details__content">
+        <h3>What we deliver</h3>
+        <ul>
+          <li>AI-assisted reporting, data structuring, and synthesis for complex, multi-source programme datasets</li>
+          <li>Dashboard design and indicator tracking systems for real-time programme monitoring</li>
+          <li>Database management and data analytics for accountability and transparency reporting</li>
+          <li>Decision-support tools and automated workflows for project management and M&E processes</li>
+          <li>AI workflow integration for consulting teams across multilingual, multi-donor environments</li>
+        </ul>
+
+        <h3>Project evidence</h3>
+        <ul>
+          <li>
+            <strong>EU DG INTPA – Cameroon (2019–2021):</strong> Built data dashboards aggregating financial and technical data from all EU-funded projects
+          </li>
+          <li>
+            <strong>EIB Accountability Mechanism (2021–2022):</strong> Structured large volumes of ESIA, monitoring, and contractual data into data-driven compliance reports
+          </li>
+          <li>
+            <strong>Dorsch Impact (2023–present):</strong> Designed knowledge management system and data analytics tools to monitor acquisition efforts
+          </li>
+          <li>
+            <strong>GSD-S (2022–present):</strong> AI-assisted service delivery, performance monitoring, and engagement with Regen Network on blockchain-based impact verification
+          </li>
+          <li>
+            <strong>GIZ BioClime & SecBlue (2024–present):</strong> AI prompting applied to M&E data aggregation, synthesis of NbS learning experiences, and multilingual reporting
+          </li>
+        </ul>
       </div>
     </div>
- 
   </div>
 </section>
  
