@@ -16,24 +16,11 @@ if (navToggle && navLinks) {
   });
 }
 
-// Service accordion
-document.querySelectorAll('.svc-row').forEach(function (row) {
-  var btn = row.querySelector('.svc-row__head');
-  if (!btn) return;
-  btn.addEventListener('click', function () {
-    var isOpen = row.classList.contains('svc-row--open');
-    // Close all rows
-    document.querySelectorAll('.svc-row--open').forEach(function (r) {
-      r.classList.remove('svc-row--open');
-      r.querySelector('.svc-row__head').setAttribute('aria-expanded', 'false');
-    });
-    // Open this one if it was closed
-    if (!isOpen) {
-      row.classList.add('svc-row--open');
-      btn.setAttribute('aria-expanded', 'true');
-      setTimeout(function () {
-        row.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }, 50);
-    }
-  });
-});
+// Reveal on scroll
+const reveals = document.querySelectorAll('.reveal');
+if (reveals.length) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+}
