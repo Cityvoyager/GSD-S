@@ -12,7 +12,6 @@
 </head>
 <body>
 
-  <!-- Nav (same as homepage) -->
   <nav class="nav" id="nav">
     <div class="nav__inner">
       <a href="/" class="nav__logo">
@@ -33,18 +32,31 @@
 
   <main class="svc-page">
 
-    <!-- Breadcrumb + back -->
+    {{/* Build ordered list of all service pages for prev/next */}}
+    {{ $allServices := where .Site.RegularPages "Section" "services" }}
+    {{ $allServices = sort $allServices "Params.number" }}
+    {{ $current := . }}
+    {{ $currentIdx := 0 }}
+    {{ range $i, $p := $allServices }}
+      {{ if eq $p.RelPermalink $current.RelPermalink }}
+        {{ $currentIdx = $i }}
+      {{ end }}
+    {{ end }}
+    {{ $prev := index $allServices (sub $currentIdx 1) }}
+    {{ $next := index $allServices (add $currentIdx 1) }}
+    {{ if eq $currentIdx 0 }}{{ $prev = last 1 $allServices | first }}{{ end }}
+    {{ if eq $currentIdx (sub (len $allServices) 1) }}{{ $next = index $allServices 0 }}{{ end }}
+
+    <!-- Breadcrumb + sibling pills -->
     <div class="svc-page__nav">
       <div class="svc-page__nav-inner">
-        <a href="/#services" class="svc-page__back">← All Services</a>
+        <a href="/#services" class="svc-page__back">All Services</a>
         <nav class="svc-page__siblings" aria-label="Other services">
-          {{ range .Site.RegularPages }}
-            {{ if eq .Section "services" }}
-              <a href="{{ .RelPermalink }}"
-                 class="svc-page__sib{{ if eq .RelPermalink $.RelPermalink }} svc-page__sib--active{{ end }}">
-                {{ .Params.short_title | default .Title }}
-              </a>
-            {{ end }}
+          {{ range $allServices }}
+            <a href="{{ .RelPermalink }}"
+               class="svc-page__sib{{ if eq .RelPermalink $current.RelPermalink }} svc-page__sib--active{{ end }}">
+              {{ .Params.short_title | default .Title }}
+            </a>
           {{ end }}
         </nav>
       </div>
@@ -59,24 +71,62 @@
       </div>
     </header>
 
-    <!-- Content -->
-    <div class="svc-page__content">
+    <!-- Two-column content -->
+    <section class="svc-page__content">
       <div class="svc-page__content-inner">
-        {{ .Content }}
+        <div class="svc-page__cols">
+
+          <div class="svc-page__col">
+            <p class="svc-page__col-label">What we deliver</p>
+            <ul class="svc-page__col-list">
+              {{ range .Params.deliverables }}
+                <li>{{ . }}</li>
+              {{ end }}
+            </ul>
+          </div>
+
+          <div class="svc-page__col svc-page__col--evidence">
+            <p class="svc-page__col-label">Project evidence</p>
+            <ul class="svc-page__col-list">
+              {{ range .Params.evidence }}
+                <li><strong>{{ .client }}</strong>{{ .detail }}</li>
+              {{ end }}
+            </ul>
+          </div>
+
+        </div>
       </div>
-    </div>
+    </section>
+
+    <!-- Prev / Next pager -->
+    <nav class="svc-page__pager" aria-label="Navigate services">
+      <div class="svc-page__pager-inner">
+        {{ with $prev }}
+          <a href="{{ .RelPermalink }}" class="svc-page__pager-link svc-page__pager-link--prev">
+            <span class="svc-page__pager-dir">← Previous</span>
+            <span class="svc-page__pager-name">{{ .Title }}</span>
+          </a>
+        {{ end }}
+        <span class="svc-page__pager-spacer"></span>
+        {{ with $next }}
+          <a href="{{ .RelPermalink }}" class="svc-page__pager-link svc-page__pager-link--next">
+            <span class="svc-page__pager-dir">Next →</span>
+            <span class="svc-page__pager-name">{{ .Title }}</span>
+          </a>
+        {{ end }}
+      </div>
+    </nav>
 
     <!-- CTA -->
     <div class="svc-page__cta">
       <div class="svc-page__cta-inner">
-        <p>Interested in this service?</p>
-        <a href="/#contact" class="btn btn--primary">Start a conversation →</a>
+        <p>Ready to work with us on {{ .Title | lower }}?</p>
+        <a href="/#contact" class="btn btn--ghost">Start a conversation →</a>
       </div>
     </div>
 
   </main>
 
-  <!-- Footer (same as homepage) -->
   <footer class="footer">
     <div class="footer__inner">
       <div>
