@@ -671,13 +671,17 @@ textarea { resize: vertical; min-height: 120px; }
 }
 
 .service-details {
-  display: none;
+  display: none !important;
   max-height: 0;
   overflow: hidden;
   opacity: 0;
   padding: 0;
   margin: 0;
   transition: all 0.5s ease;
+}
+
+.service-details.active {
+  display: block !important;
 }
 
 .service-details.active {
