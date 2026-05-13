@@ -457,10 +457,6 @@ textarea { resize: vertical; min-height: 120px; }
   animation: detailOpen 0.35s ease;
 }
 
-.service-detail[aria-hidden="false"] {
-  display: block;
-}
-
 @keyframes detailOpen {
   from { opacity: 0; transform: translateY(12px); }
   to   { opacity: 1; transform: translateY(0); }
