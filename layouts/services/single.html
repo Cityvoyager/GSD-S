@@ -43,10 +43,13 @@
       {{ end }}
     {{ end }}
 
-    {{ $prev := index $allServices (sub $currentIdx 1) }}
-    {{ $next := index $allServices (add $currentIdx 1) }}
-    {{ if eq $currentIdx 0 }}{{ $prev = last 1 $allServices | index 0 }}{{ end }}
-    {{ if eq $currentIdx (sub (len $allServices) 1) }}{{ $next = index $allServices 0 }}{{ end }}
+    {{ $prevIdx := sub $currentIdx 1 }}
+    {{ $nextIdx := add $currentIdx 1 }}
+    {{ if lt $prevIdx 0 }}{{ $prevIdx = sub (len $allServices) 1 }}{{ end }}
+    {{ if ge $nextIdx (len $allServices) }}{{ $nextIdx = 0 }}{{ end }}
+    
+    {{ $prev := index $allServices $prevIdx }}
+    {{ $next := index $allServices $nextIdx }}
     
     <!-- Breadcrumb + sibling pills -->
     <div class="svc-page__nav">
