@@ -42,11 +42,12 @@
         {{ $currentIdx = $i }}
       {{ end }}
     {{ end }}
+
     {{ $prev := index $allServices (sub $currentIdx 1) }}
     {{ $next := index $allServices (add $currentIdx 1) }}
-    {{ if eq $currentIdx 0 }}{{ $prev = last 1 $allServices | first }}{{ end }}
+    {{ if eq $currentIdx 0 }}{{ $prev = last 1 $allServices | index 0 }}{{ end }}
     {{ if eq $currentIdx (sub (len $allServices) 1) }}{{ $next = index $allServices 0 }}{{ end }}
-
+    
     <!-- Breadcrumb + sibling pills -->
     <div class="svc-page__nav">
       <div class="svc-page__nav-inner">
