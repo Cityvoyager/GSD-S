@@ -311,9 +311,14 @@ ul { list-style: none; }
 }
 
 .services__grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1px; background: var(--border-light);
-  border: 1px solid var(--border-light); border-radius: 16px; overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border-light);
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  overflow: hidden;
+  width: 100%;
 }
 
 .service-card { background: var(--bg-page); padding: 2.25rem 2rem; display: flex; flex-direction: column; gap: 0.75rem; transition: background 0.2s; }
@@ -613,8 +618,12 @@ textarea { resize: vertical; min-height: 120px; }
   .footer__inner { flex-direction: column; }
 }
 
+@media (max-width: 768px) {
+  .services__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
 @media (max-width: 480px) {
-  .services__grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .services__grid { grid-template-columns: 1fr; }
   .approach__pillars { grid-template-columns: 1fr; }
 }
 
