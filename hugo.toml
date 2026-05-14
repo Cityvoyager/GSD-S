@@ -11,11 +11,11 @@ title = "GSD-S | Sustainable Development Experts"
 [menu]
   [[menu.main]]
     name = "Services"
-    url = "/services/"
+    url = "/#services"
     weight = 1
   [[menu.main]]
     name = "About"
-    url = "/about/"
+    url = "/#about"
     weight = 2
   [[menu.main]]
     name = "Contact"
